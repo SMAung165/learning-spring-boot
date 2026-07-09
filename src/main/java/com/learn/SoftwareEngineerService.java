@@ -1,0 +1,21 @@
+package com.learn;
+
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class SoftwareEngineerService {
+
+    private final SoftwareEngineerRepository softwareEngineerRepository;
+
+    //constructors
+    public SoftwareEngineerService(SoftwareEngineerRepository softwareEngineerRepository) {
+        this.softwareEngineerRepository = softwareEngineerRepository;
+    }
+
+    //getters
+    public List<SoftwareEngineer> getAllSoftwareEngineers() {
+        return softwareEngineerRepository.findAll();
+    }
+}
