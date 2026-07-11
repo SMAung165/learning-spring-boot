@@ -26,4 +26,12 @@ public class SoftwareEngineerService {
     public SoftwareEngineer getSoftwareEngineerById(Integer id) {
         return softwareEngineerRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("SoftwareEngineer id not found!"));
     }
+
+    public void deleteSoftwareEngineerById(Integer id) {
+        if (softwareEngineerRepository.existsById(id)) {
+            softwareEngineerRepository.deleteById(id);
+        } else {
+            throw new IllegalArgumentException("SoftwareEngineer id not found!");
+        }
+    }
 }

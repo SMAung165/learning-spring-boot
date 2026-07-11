@@ -20,12 +20,17 @@ public class SoftwareEngineerController {
     }
 
     @GetMapping("{id}")
-    public SoftwareEngineer getSoftwareEngineerById(@PathVariable int id) {
+    public SoftwareEngineer getSoftwareEngineerById(@PathVariable Integer id) {
         return softwareEngineerService.getSoftwareEngineerById(id);
     }
 
     @PostMapping
     public void addNewSoftwareEngineer(@RequestBody SoftwareEngineer softwareEngineer) {
         softwareEngineerService.insertSoftwareEngineer(softwareEngineer);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteSoftwareEngineerById(@PathVariable Integer id) {
+        softwareEngineerService.deleteSoftwareEngineerById(id);
     }
 }
