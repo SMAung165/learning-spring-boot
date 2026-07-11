@@ -33,4 +33,9 @@ public class SoftwareEngineerController {
     public void deleteSoftwareEngineerById(@PathVariable Integer id) {
         softwareEngineerService.deleteSoftwareEngineerById(id);
     }
+
+    @PutMapping("{id}")
+    public void updateSoftwareEngineerById(@PathVariable Integer id, @RequestBody SoftwareEngineer softwareEngineer) {
+        softwareEngineerService.updateSoftwareEngineerById(id,softwareEngineer);
+    }
 }

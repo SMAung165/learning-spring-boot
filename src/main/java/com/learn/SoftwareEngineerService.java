@@ -34,4 +34,11 @@ public class SoftwareEngineerService {
             throw new IllegalArgumentException("SoftwareEngineer id not found!");
         }
     }
+
+    public void updateSoftwareEngineerById(Integer id, SoftwareEngineer update) {
+        SoftwareEngineer queriedSoftwareEngineer = softwareEngineerRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("SoftwareEngineer id not found!"));
+        queriedSoftwareEngineer.setName(update.getName());
+        queriedSoftwareEngineer.setTechStack(update.getTechStack());
+        softwareEngineerRepository.save(queriedSoftwareEngineer);
+    }
 }
